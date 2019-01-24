@@ -177,7 +177,7 @@ $ curl -o ~/.git-prompt.sh \
 </code></pre><p>and then add the following to your ~/.bash_profile</p>
 <pre><code>$ source ~/.git-prompt.sh
 </code></pre><p>With that downloaded, add the following to your ~/.bashrc file</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export PS1=$&apos;$(ruby -e &quot;print RUBY_VERSION&quot;) \e[36m\u\e[0m\e[32m@\h\e[0m \e[33m \W\e[31m$(__git_ps1 &quot; (%s)&quot;)\e[0m &apos;</span><br><span class="line">export PS1=&quot;\[\033[G\]$PS1&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export PS1=$&apos;$(ruby -e &quot;print RUBY_VERSION&quot;) \e[36m\u\e[0m\e[32m@\h\e[0m \e[33m \W\e[31m$(__git_ps1 &quot; (%s)&quot;)\e[0m &apos;</span><br><span class="line">export PS1=&quot;\[\033[G\]$PS1&quot;</span><br></pre></td></tr></table></figure>
 <p>Source both files:</p>
 <pre><code>$ source ~/.bash_profile
 $ source ~/.bashrc
