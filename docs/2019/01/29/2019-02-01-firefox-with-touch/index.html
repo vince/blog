@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="tl;dr-----* modify .desktop file to add env MOZ_USE_XINPUT2=1* alternatively launch Firefox from the command line with MOZ_USE_XINPUT2=1 I bought this laptop with a touchscreen and occasionally find m">
+<meta name="keywords" content="linux,firefox">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Getting a touchscreen events working with Firefox">
+<meta property="og:url" content="https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/index.html">
+<meta property="og:site_name" content="Hackido">
+<meta property="og:description" content="tl;dr-----* modify .desktop file to add env MOZ_USE_XINPUT2=1* alternatively launch Firefox from the command line with MOZ_USE_XINPUT2=1 I bought this laptop with a touchscreen and occasionally find m">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-31T02:04:30.814Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Getting a touchscreen events working with Firefox">
+<meta name="twitter:description" content="tl;dr-----* modify .desktop file to add env MOZ_USE_XINPUT2=1* alternatively launch Firefox from the command line with MOZ_USE_XINPUT2=1 I bought this laptop with a touchscreen and occasionally find m">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Getting a touchscreen events working with Firefox</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://www.econify.com/">Work</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/01/29/2019-01-29-giving-arch-another-try/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/12/21/2018-12-21-install-mariadb-debian/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&text=Getting a touchscreen events working with Firefox"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&is_video=false&description=Getting a touchscreen events working with Firefox"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Getting a touchscreen events working with Firefox&body=Check out this article: https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&name=Getting a touchscreen events working with Firefox&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Getting a touchscreen events working with Firefox
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">vince</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-01-29T10:30:00.000Z" itemprop="datePublished">2019-01-29</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/blog/">blog</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/firefox/">firefox</a>, <a class="tag-link" href="/tags/linux/">linux</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tl;dr</span><br><span class="line">-----</span><br><span class="line">* modify .desktop file to add env MOZ_USE_XINPUT2=1</span><br><span class="line">* alternatively launch Firefox from the command line with MOZ_USE_XINPUT2=1</span><br></pre></td></tr></table></figure>
+<p>I bought this laptop with a touchscreen and occasionally find myself using it while surfing websites. Now with Chrome that worked just fine but with Firefox it tends to select areas of text instead of scrolling. That sucks!</p>
+<p>Fortunately it’s quite fixable. You just have to modify the .desktop file (or launch from the command line) with an additional environmental option: <code>env MOZ_USE_XINPUT2=1</code></p>
+<p>On most linux distributions, the .desktop file is in .local/share/applications but you can also modify it globally in /usr/share/applications if you have root.</p>
+<pre><code>vim ~/.local/share/applications/firefoxtouch.desktop
+</code></pre><p>Then modify the Exec line so it looks like this instead:</p>
+<p><code>Exec=env MOZ_USE_XINPUT2=1 /usr/bin/firefox %u</code></p>
+<p>When you relaunch Firefox, you should have the ability to use your touchscreen in the same way Chrome uses it. Hopefully Firefox makes this the default in the future but as of version 65, I’m still waiting.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://www.econify.com/">Work</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&text=Getting a touchscreen events working with Firefox"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&is_video=false&description=Getting a touchscreen events working with Firefox"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Getting a touchscreen events working with Firefox&body=Check out this article: https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&name=Getting a touchscreen events working with Firefox&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Vince Wadhwani
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://www.econify.com/">Work</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-122322302-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    <!-- Default Statcounter code for Hackido http://www.hackido.com -->
+    <script type="text/javascript">
+    var sc_project=4237803;
+    var sc_invisible=1;
+    var sc_security="c7f025ad";
+    </script>
+    <script type="text/javascript"
+    src="https://www.statcounter.com/counter/counter.js"
+    async></script>
+    <noscript><div class="statcounter"><a title="Web Analytics
+    Made Easy - StatCounter" href="https://statcounter.com/"
+    target="_blank"><img class="statcounter"
+    src="https://c.statcounter.com/4237803/0/c7f025ad/1/"
+    alt="Web Analytics Made Easy -
+    StatCounter"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+</body>
+</html>
