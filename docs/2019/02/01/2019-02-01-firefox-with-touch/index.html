@@ -10,11 +10,11 @@
 <meta name="keywords" content="linux,firefox">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Getting a touchscreen events working with Firefox">
-<meta property="og:url" content="https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/index.html">
+<meta property="og:url" content="https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/index.html">
 <meta property="og:site_name" content="Hackido">
 <meta property="og:description" content="tl;dr-----* modify or create .desktop file to add env MOZ_USE_XINPUT2=1* file can be modified globally or created locally* careful as there may be multipe Exec entries! I bought this laptop with a tou">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-01T18:31:02.034Z">
+<meta property="og:updated_time" content="2019-02-01T18:46:24.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Getting a touchscreen events working with Firefox">
 <meta name="twitter:description" content="tl;dr-----* modify or create .desktop file to add env MOZ_USE_XINPUT2=1* file can be modified globally or created locally* careful as there may be multipe Exec entries! I bought this laptop with a tou">
@@ -73,10 +73,8 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2019/01/29/2019-01-29-giving-arch-another-try/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
-        
-        <li><a class="icon" href="/2018/12/21/2018-12-21-install-mariadb-debian/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2019/01/29/2019-01-29-giving-arch-another-try/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -89,16 +87,16 @@
     <br>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&text=Getting a touchscreen events working with Firefox"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&is_video=false&description=Getting a touchscreen events working with Firefox"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Getting a touchscreen events working with Firefox&body=Check out this article: https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&name=Getting a touchscreen events working with Firefox&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/&text=Getting a touchscreen events working with Firefox"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/&is_video=false&description=Getting a touchscreen events working with Firefox"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Getting a touchscreen events working with Firefox&body=Check out this article: https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/&name=Getting a touchscreen events working with Firefox&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -127,7 +125,7 @@
       
     <div class="postdate">
       
-        <time datetime="2019-01-29T10:30:00.000Z" itemprop="datePublished">2019-01-29</time>
+        <time datetime="2019-02-01T06:30:00.000Z" itemprop="datePublished">2019-02-01</time>
         
       
     </div>
@@ -156,10 +154,11 @@
 <p>I bought this laptop with a touchscreen and occasionally find myself using it while surfing websites. Now with Chrome that worked just fine but with Firefox it tends to select areas of text instead of scrolling. That sucks!</p>
 <p>Fortunately it’s quite fixable. You just have to modify the .desktop file (or launch from the command line) with an additional environmental option: <code>env MOZ_USE_XINPUT2=1</code></p>
 <p>On most linux distributions, the .desktop file is in <code>/usr/local/share/applications</code> or <code>~/.local/share/applications</code> but you can also modify it globally in <code>/usr/share/applications</code> if you have root.</p>
-<pre><code>vim ~/.local/share/applications/firefoxtouch.desktop
+<pre><code>$ vim ~/.local/share/applications/firefoxtouch.desktop
 </code></pre><p>Then modify the Exec line so it looks like this instead:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">If you&apos;re creating an entry from scratch in your local share directory you may want to give it a different name like &quot;Firefox Touch&quot;</span><br></pre></td></tr></table></figure>
-<p>[Desktop Entry]<br>Name=Firefox Touch<br>Comment=Browse the Web Touch<br>Icon=firefox<br>Exec=env MOZ_USE_XINPUT2=1 /usr/bin/firefox<br>Terminal=false<br>Type=Application<br>Categories=Network;WebBrowser;<br>StartupNotify=true<br><code>`</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Exec=env MOZ_USE_XINPUT2=1 /usr/bin/firefox %u</span><br></pre></td></tr></table></figure>
+<p>If you’re creating an entry from scratch in your local share directory you may want to give it a different name like “Firefox Touch”</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Name=Firefox Touch</span><br><span class="line">Comment=Browse the Web Touch</span><br><span class="line">Icon=firefox</span><br><span class="line">Exec=env MOZ_USE_XINPUT2=1 /usr/bin/firefox</span><br><span class="line">Terminal=false</span><br><span class="line">Type=Application</span><br><span class="line">Categories=Network;WebBrowser;</span><br><span class="line">StartupNotify=true</span><br></pre></td></tr></table></figure>
 <p>When you relaunch Firefox, you should have the ability to use your touchscreen in the same way Chrome uses it. If not, go back to your file and make sure you’ve modified ALL the entries.. sometimes the .desktop file has multiple ones for private browser, new window, etc. Hopefully Firefox makes this the default in the future but as of version 65, I’m still waiting.</p>
 
   </div>
@@ -191,16 +190,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&text=Getting a touchscreen events working with Firefox"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&is_video=false&description=Getting a touchscreen events working with Firefox"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Getting a touchscreen events working with Firefox&body=Check out this article: https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/&name=Getting a touchscreen events working with Firefox&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/&text=Getting a touchscreen events working with Firefox"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/&is_video=false&description=Getting a touchscreen events working with Firefox"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Getting a touchscreen events working with Firefox&body=Check out this article: https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/&title=Getting a touchscreen events working with Firefox"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hackido.com/2019/02/01/2019-02-01-firefox-with-touch/&name=Getting a touchscreen events working with Firefox&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Getting a touchscreen events working with Firefox"
-date:   2019-01-29 16:00:00 +0530
+date:   2019-02-01 12:00:00 +0530
 categories: blog
 author:     vince
 image:      /images/posts/linux-image.jpg
@@ -24,11 +24,14 @@ Fortunately it's quite fixable. You just have to modify the .desktop file (or la
 
 On most linux distributions, the .desktop file is in `/usr/local/share/applications` or `~/.local/share/applications` but you can also modify it globally in `/usr/share/applications` if you have root.
 
-    vim ~/.local/share/applications/firefoxtouch.desktop
+    $ vim ~/.local/share/applications/firefoxtouch.desktop
 
 Then modify the Exec line so it looks like this instead:
 
-```Exec=env MOZ_USE_XINPUT2=1 /usr/bin/firefox %u```
+
+```
+Exec=env MOZ_USE_XINPUT2=1 /usr/bin/firefox %u
+```
 
 If you're creating an entry from scratch in your local share directory you may want to give it a different name like "Firefox Touch"
 
