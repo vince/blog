@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="tl;dr-----* modify .desktop file to add env MOZ_USE_XINPUT2=1* alternatively launch Firefox from the command line with MOZ_USE_XINPUT2=1 I bought this laptop with a touchscreen and occasionally find m">
+    <meta name="description" content="tl;dr-----* modify or create .desktop file to add env MOZ_USE_XINPUT2=1* file can be modified globally or created locally* careful as there may be multipe Exec entries! I bought this laptop with a tou">
 <meta name="keywords" content="linux,firefox">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Getting a touchscreen events working with Firefox">
 <meta property="og:url" content="https://hackido.com/2019/01/29/2019-02-01-firefox-with-touch/index.html">
 <meta property="og:site_name" content="Hackido">
-<meta property="og:description" content="tl;dr-----* modify .desktop file to add env MOZ_USE_XINPUT2=1* alternatively launch Firefox from the command line with MOZ_USE_XINPUT2=1 I bought this laptop with a touchscreen and occasionally find m">
+<meta property="og:description" content="tl;dr-----* modify or create .desktop file to add env MOZ_USE_XINPUT2=1* file can be modified globally or created locally* careful as there may be multipe Exec entries! I bought this laptop with a tou">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-31T02:04:30.814Z">
+<meta property="og:updated_time" content="2019-02-01T18:31:02.034Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Getting a touchscreen events working with Firefox">
-<meta name="twitter:description" content="tl;dr-----* modify .desktop file to add env MOZ_USE_XINPUT2=1* alternatively launch Firefox from the command line with MOZ_USE_XINPUT2=1 I bought this laptop with a touchscreen and occasionally find m">
+<meta name="twitter:description" content="tl;dr-----* modify or create .desktop file to add env MOZ_USE_XINPUT2=1* file can be modified globally or created locally* careful as there may be multipe Exec entries! I bought this laptop with a tou">
     
     
         
@@ -152,14 +152,15 @@
   
 
   <div class="content" itemprop="articleBody">
-    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tl;dr</span><br><span class="line">-----</span><br><span class="line">* modify .desktop file to add env MOZ_USE_XINPUT2=1</span><br><span class="line">* alternatively launch Firefox from the command line with MOZ_USE_XINPUT2=1</span><br></pre></td></tr></table></figure>
+    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tl;dr</span><br><span class="line">-----</span><br><span class="line">* modify or create .desktop file to add env MOZ_USE_XINPUT2=1</span><br><span class="line">* file can be modified globally or created locally</span><br><span class="line">* careful as there may be multipe Exec entries!</span><br></pre></td></tr></table></figure>
 <p>I bought this laptop with a touchscreen and occasionally find myself using it while surfing websites. Now with Chrome that worked just fine but with Firefox it tends to select areas of text instead of scrolling. That sucks!</p>
 <p>Fortunately it’s quite fixable. You just have to modify the .desktop file (or launch from the command line) with an additional environmental option: <code>env MOZ_USE_XINPUT2=1</code></p>
-<p>On most linux distributions, the .desktop file is in .local/share/applications but you can also modify it globally in /usr/share/applications if you have root.</p>
+<p>On most linux distributions, the .desktop file is in <code>/usr/local/share/applications</code> or <code>~/.local/share/applications</code> but you can also modify it globally in <code>/usr/share/applications</code> if you have root.</p>
 <pre><code>vim ~/.local/share/applications/firefoxtouch.desktop
 </code></pre><p>Then modify the Exec line so it looks like this instead:</p>
-<p><code>Exec=env MOZ_USE_XINPUT2=1 /usr/bin/firefox %u</code></p>
-<p>When you relaunch Firefox, you should have the ability to use your touchscreen in the same way Chrome uses it. Hopefully Firefox makes this the default in the future but as of version 65, I’m still waiting.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">If you&apos;re creating an entry from scratch in your local share directory you may want to give it a different name like &quot;Firefox Touch&quot;</span><br></pre></td></tr></table></figure>
+<p>[Desktop Entry]<br>Name=Firefox Touch<br>Comment=Browse the Web Touch<br>Icon=firefox<br>Exec=env MOZ_USE_XINPUT2=1 /usr/bin/firefox<br>Terminal=false<br>Type=Application<br>Categories=Network;WebBrowser;<br>StartupNotify=true<br><code>`</code></p>
+<p>When you relaunch Firefox, you should have the ability to use your touchscreen in the same way Chrome uses it. If not, go back to your file and make sure you’ve modified ALL the entries.. sometimes the .desktop file has multiple ones for private browser, new window, etc. Hopefully Firefox makes this the default in the future but as of version 65, I’m still waiting.</p>
 
   </div>
 </article>
