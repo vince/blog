@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hackido">
 <meta property="og:description" content="tl;dr-----* get imagemagick6, libimagemagick6* export PKG_CONFIG_PATH=/usr/lib/imagemagick6/pkgconfig So you’re doing ruby development in 2019, eh? Good for you! Despite the rumors, Ruby on Rails is s">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-16T23:18:01.466Z">
+<meta property="og:updated_time" content="2019-04-16T23:21:54.459Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Install Rmagick 3.1 on Archlinux">
 <meta name="twitter:description" content="tl;dr-----* get imagemagick6, libimagemagick6* export PKG_CONFIG_PATH=/usr/lib/imagemagick6/pkgconfig So you’re doing ruby development in 2019, eh? Good for you! Despite the rumors, Ruby on Rails is s">
@@ -152,7 +152,17 @@
   <div class="content" itemprop="articleBody">
     <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tl;dr</span><br><span class="line">-----</span><br><span class="line">* get imagemagick6, libimagemagick6</span><br><span class="line">* export PKG_CONFIG_PATH=/usr/lib/imagemagick6/pkgconfig</span><br></pre></td></tr></table></figure>
 <p>So you’re doing ruby development in 2019, eh? Good for you! Despite the rumors, Ruby on Rails is still a great way to get a project up and running. I managed to get the core of <a href="https://www.rpgbuddy.com" target="_blank" rel="noopener">https://www.rpgbuddy.com</a> up and running in a week. One of my clients is also still running Ruby and I need to upgrade them from an old 2.3.3 version to 2.6.2. With that I decided to update a bunch of old gems too. One of those is Rmagick.</p>
-<p>I didn’t have any problems with it on my Debian install. But on Arch I kept getting an error. Googling solutions always brought me back to a missing libmagickwand-dev for Debian/Ubuntu. Those packages don’t exist on Arch so I was at a loss. Fortunately a while back I remember having a similar problem on Mac OS and recall the solution was to set the PKG_CONFIG path. Sure enough, that solves the problem here too:</p>
+<p>I didn’t have any problems with it on my Debian install. But on Arch I kept getting an error.</p>
+<pre><code>checking for brew... no
+checking for gcc... yes
+checking for pkg-config... yes
+
+
+ERROR: Can&apos;t install RMagick 3.1.0. Can&apos;t find ImageMagick with pkg-config
+
+
+*** extconf.rb failed ***
+</code></pre><p>Googling solutions always brought me back to a missing libmagickwand-dev for Debian/Ubuntu. Those packages don’t exist on Arch so I was at a loss. Fortunately a while back I remember having a similar problem on Mac OS and recall the solution was to set the PKG_CONFIG path. Sure enough, that solves the problem here too:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export PKG_CONFIG_PATH=/usr/lib/imagemagick6/pkgconfig</span><br></pre></td></tr></table></figure>
 <p>After that installing the rmagick gem directly or via bundler whould work just fine.</p>
 
