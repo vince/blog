@@ -38,4 +38,4 @@ Googling solutions always brought me back to a missing libmagickwand-dev for Deb
 export PKG_CONFIG_PATH=/usr/lib/imagemagick6/pkgconfig
 ```
 
-After that installing the rmagick gem directly or via bundler whould work just fine.
+After that installing the rmagick gem directly or via bundler would work just fine.
