@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="tl;dr-----* you shouldn&#39;t need sudo* create a local directory instead and add it to your path I was transitioning this blog from using Jekyll to Hexo. After comparing both, I feel I made the right">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Should you npm install globally?">
+<meta property="og:url" content="https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/index.html">
+<meta property="og:site_name" content="Hackido">
+<meta property="og:description" content="tl;dr-----* you shouldn&#39;t need sudo* create a local directory instead and add it to your path I was transitioning this blog from using Jekyll to Hexo. After comparing both, I feel I made the right">
+<meta property="article:published_time" content="2019-02-22T06:30:00.000Z">
+<meta property="article:modified_time" content="2019-02-21T15:59:43.206Z">
+<meta property="article:author" content="Vince Wadhwani">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="nodejs">
+<meta property="article:tag" content="npm">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Should you npm install globally?</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://www.econify.com/" target="_blank" rel="noopener">Work</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/04/16/2019-04-16-rmagick-arch-linux/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/02/01/2019-02-01-firefox-with-touch/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/&text=Should you npm install globally?" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/&title=Should you npm install globally?" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/&is_video=false&description=Should you npm install globally?" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Should you npm install globally?&body=Check out this article: https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/&title=Should you npm install globally?" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/&title=Should you npm install globally?" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/&title=Should you npm install globally?" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/&title=Should you npm install globally?" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/&name=Should you npm install globally?&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Should you npm install globally?
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">vince</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-02-22T06:30:00.000Z" itemprop="datePublished">2019-02-22</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/tutorial/">tutorial</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/linux/" rel="tag">linux</a>, <a class="tag-link" href="/tags/nodejs/" rel="tag">nodejs</a>, <a class="tag-link" href="/tags/npm/" rel="tag">npm</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tl;dr</span><br><span class="line">-----</span><br><span class="line">* you shouldn&#39;t need sudo</span><br><span class="line">* create a local directory instead and add it to your path</span><br></pre></td></tr></table></figure>
+<p>I was transitioning this blog from using Jekyll to Hexo. After comparing both, I feel I made the right choice. However, I almost started off on the wrong foot. Being unfamiliar with Node.js, I was reviewing the Hexo install instructions and the first thing it tells you is to install via:</p>
+<pre><code>$ npm install hexo-cli -g
+</code></pre><p>I’m running on Archlinux and got a permission denied error when I tried that. It’s likely because I used pacman (the Archlinux package manager) to install node and/or npm. So that left me with the decision of whether to use sudo to force the install. After years of running homebrew, that felt like the wrong decision. And it is. Instead of using sudo, fix permissions or create a new directory. If in doubt, your problem is likely solved by creating a new, local directory.</p>
+<p>The first step in diagnosing is figuring out where npm is storing its packages. To do that, I ran</p>
+<pre><code>$ npm config get prefix
+</code></pre><p>and found that my directory was set to /usr. I didn’t want to change the permissions of /usr so knew that I needed to switch the directory where the node packages are installed. To do that:</p>
+<p>Step 1:  Make a directory for global installations:</p>
+<pre><code>$ mkdir ~/.npm-global
+</code></pre><p>Step 2: Configure npm to use the new directory path:</p>
+<pre><code>$ npm config set prefix &apos;~/.npm-global&apos;
+</code></pre><p>Step 3: Open or create a ~/.profile file and add this line:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export PATH&#x3D;~&#x2F;.npm-global&#x2F;bin:$PATH</span><br></pre></td></tr></table></figure>
+<p>Step 4: Source that file so it uses the new path:</p>
+<pre><code>$ source ~/.profile
+</code></pre><p>You should now be able to download and install the package with the -g flag without using sudo. Try the original hexo install command again:</p>
+<pre><code>$ npm install hexo-cli -g
+</code></pre><p>HT to <a href="https://stackoverflow.com/questions/47252451/permission-denied-when-installing-npm-modules-in-osx" target="_blank" rel="noopener">this post</a> on Stack Overflow which had all the answers.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://www.econify.com/" target="_blank" rel="noopener">Work</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/&text=Should you npm install globally?" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/&title=Should you npm install globally?" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/&is_video=false&description=Should you npm install globally?" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Should you npm install globally?&body=Check out this article: https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/&title=Should you npm install globally?" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/&title=Should you npm install globally?" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/&title=Should you npm install globally?" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/&title=Should you npm install globally?" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hackido.com/2019/02/22/2019-02-22-should-you-npm-install-globally/&name=Should you npm install globally?&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Vince Wadhwani
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://www.econify.com/" target="_blank" rel="noopener">Work</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-122322302-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    <!-- Default Statcounter code for Hackido http://www.hackido.com -->
+    <script type="text/javascript">
+    var sc_project=4237803;
+    var sc_invisible=1;
+    var sc_security="c7f025ad";
+    </script>
+    <script type="text/javascript"
+    src="https://www.statcounter.com/counter/counter.js"
+    async></script>
+    <noscript><div class="statcounter"><a title="Web Analytics
+    Made Easy - StatCounter" href="https://statcounter.com/"
+    target="_blank"><img class="statcounter"
+    src="https://c.statcounter.com/4237803/0/c7f025ad/1/"
+    alt="Web Analytics Made Easy -
+    StatCounter"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+</body>
+</html>
