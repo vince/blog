@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hackido
+title: Greycloak
 subtitle:
 description: useful bits i store because i never know when you'll take down your blog
 keywords:
@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://hackido.com
+url: https://greycloak.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

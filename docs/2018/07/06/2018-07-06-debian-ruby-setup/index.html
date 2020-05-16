@@ -9,15 +9,15 @@
     <meta name="description" content="So you’ve got a new debian install and need to get it set up to do real work? Here’s a quick guide to get the packages you need assuming you’re using Debian’s current testing distro, Buster, installed">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Setting up Debian Buster for Ruby Development">
-<meta property="og:url" content="https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/index.html">
-<meta property="og:site_name" content="Hackido">
+<meta property="og:url" content="https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/index.html">
+<meta property="og:site_name" content="Greycloak">
 <meta property="og:description" content="So you’ve got a new debian install and need to get it set up to do real work? Here’s a quick guide to get the packages you need assuming you’re using Debian’s current testing distro, Buster, installed">
 <meta property="article:published_time" content="2018-07-06T18:04:56.000Z">
 <meta property="article:modified_time" content="2019-01-23T18:19:12.126Z">
 <meta property="article:author" content="Vince Wadhwani">
+<meta property="article:tag" content="debian">
 <meta property="article:tag" content="ruby">
 <meta property="article:tag" content="git">
-<meta property="article:tag" content="debian">
 <meta name="twitter:card" content="summary">
     
     
@@ -78,7 +78,7 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2018/07/06/2018-07-07-debian-postgresql-setup/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/07/06/2018-07-07-fix-keyboard-lag-crouton/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" href="/2013/10/08/2013-10-08-export-rails-to-csv/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -94,16 +94,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/&text=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/&is_video=false&description=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Setting up Debian Buster for Ruby Development&body=Check out this article: https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/&name=Setting up Debian Buster for Ruby Development&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/&text=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/&is_video=false&description=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Setting up Debian Buster for Ruby Development&body=Check out this article: https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/&name=Setting up Debian Buster for Ruby Development&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -217,16 +217,16 @@ $ source ~/.bashrc
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/&text=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/&is_video=false&description=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Setting up Debian Buster for Ruby Development&body=Check out this article: https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hackido.com/2018/07/06/2018-07-06-debian-ruby-setup/&name=Setting up Debian Buster for Ruby Development&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/&text=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/&is_video=false&description=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Setting up Debian Buster for Ruby Development&body=Check out this article: https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/&title=Setting up Debian Buster for Ruby Development" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://greycloak.com/2018/07/06/2018-07-06-debian-ruby-setup/&name=Setting up Debian Buster for Ruby Development&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
