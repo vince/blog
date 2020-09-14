@@ -13,8 +13,8 @@ tags:
 ```
 tl;dr
 -----
-* get imagemagick6, libimagemagick6
-* export PKG_CONFIG_PATH=/usr/lib/imagemagick6/pkgconfig
+* sudo pacman -S libmagick6
+* PKG_CONFIG_PATH=/usr/lib/imagemagick6/pkgconfig bundle install
 ```
 
 So you're doing ruby development in 2019, eh? Good for you! Despite the rumors, Ruby on Rails is still a great way to get a project up and running. I managed to get the core of [https://www.rpgbuddy.com](https://www.rpgbuddy.com) up and running in a week. One of my clients is also still running Ruby and I need to upgrade them from an old 2.3.3 version to 2.6.2. With that I decided to update a bunch of old gems too. One of those is Rmagick.
