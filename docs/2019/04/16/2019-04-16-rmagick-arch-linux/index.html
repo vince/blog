@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="tl;dr-----* get imagemagick6, libimagemagick6* export PKG_CONFIG_PATH&#x3D;&#x2F;usr&#x2F;lib&#x2F;imagemagick6&#x2F;pkgconfig So you’re doing ruby development in 2019, eh? Good for you! Despite the r">
+    <meta name="description" content="tl;dr-----* sudo pacman -S libmagick6* PKG_CONFIG_PATH&#x3D;&#x2F;usr&#x2F;lib&#x2F;imagemagick6&#x2F;pkgconfig bundle install So you’re doing ruby development in 2019, eh? Good for you! Despite the r">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Install Rmagick 3.1 on Archlinux">
 <meta property="og:url" content="https://greycloak.com/2019/04/16/2019-04-16-rmagick-arch-linux/index.html">
 <meta property="og:site_name" content="Greycloak">
-<meta property="og:description" content="tl;dr-----* get imagemagick6, libimagemagick6* export PKG_CONFIG_PATH&#x3D;&#x2F;usr&#x2F;lib&#x2F;imagemagick6&#x2F;pkgconfig So you’re doing ruby development in 2019, eh? Good for you! Despite the r">
+<meta property="og:description" content="tl;dr-----* sudo pacman -S libmagick6* PKG_CONFIG_PATH&#x3D;&#x2F;usr&#x2F;lib&#x2F;imagemagick6&#x2F;pkgconfig bundle install So you’re doing ruby development in 2019, eh? Good for you! Despite the r">
 <meta property="article:published_time" content="2019-04-16T06:30:00.000Z">
-<meta property="article:modified_time" content="2019-05-02T03:58:07.114Z">
+<meta property="article:modified_time" content="2020-09-14T19:30:34.916Z">
 <meta property="article:author" content="Vince Wadhwani">
 <meta property="article:tag" content="archlinux">
 <meta property="article:tag" content="ruby">
@@ -70,7 +70,7 @@
          
           <li><a href="/archives/">Writing</a></li>
          
-          <li><a href="https://www.econify.com/" target="_blank" rel="noopener">Work</a></li>
+          <li><a href="/projects_url">Projects</a></li>
         
       </ul>
     </span>
@@ -102,6 +102,7 @@
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://greycloak.com/2019/04/16/2019-04-16-rmagick-arch-linux/&title=Install Rmagick 3.1 on Archlinux" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=https://greycloak.com/2019/04/16/2019-04-16-rmagick-arch-linux/&title=Install Rmagick 3.1 on Archlinux" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://greycloak.com/2019/04/16/2019-04-16-rmagick-arch-linux/&name=Install Rmagick 3.1 on Archlinux&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://greycloak.com/2019/04/16/2019-04-16-rmagick-arch-linux/&t=Install Rmagick 3.1 on Archlinux" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -155,7 +156,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tl;dr</span><br><span class="line">-----</span><br><span class="line">* get imagemagick6, libimagemagick6</span><br><span class="line">* export PKG_CONFIG_PATH&#x3D;&#x2F;usr&#x2F;lib&#x2F;imagemagick6&#x2F;pkgconfig</span><br></pre></td></tr></table></figure>
+    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tl;dr</span><br><span class="line">-----</span><br><span class="line">* sudo pacman -S libmagick6</span><br><span class="line">* PKG_CONFIG_PATH&#x3D;&#x2F;usr&#x2F;lib&#x2F;imagemagick6&#x2F;pkgconfig bundle install</span><br></pre></td></tr></table></figure>
 <p>So you’re doing ruby development in 2019, eh? Good for you! Despite the rumors, Ruby on Rails is still a great way to get a project up and running. I managed to get the core of <a href="https://www.rpgbuddy.com" target="_blank" rel="noopener">https://www.rpgbuddy.com</a> up and running in a week. One of my clients is also still running Ruby and I need to upgrade them from an old 2.3.3 version to 2.6.2. With that I decided to update a bunch of old gems too. One of those is Rmagick.</p>
 <p>I didn’t have any problems with it on my Debian install. But on Arch I kept getting an error.</p>
 <pre><code>checking for brew... no
@@ -189,7 +190,7 @@ ERROR: Can&apos;t install RMagick 3.1.0. Can&apos;t find ImageMagick with pkg-co
          
           <li><a href="/archives/">Writing</a></li>
          
-          <li><a href="https://www.econify.com/" target="_blank" rel="noopener">Work</a></li>
+          <li><a href="/projects_url">Projects</a></li>
         
       </ul>
     </div>
@@ -210,6 +211,7 @@ ERROR: Can&apos;t install RMagick 3.1.0. Can&apos;t find ImageMagick with pkg-co
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://greycloak.com/2019/04/16/2019-04-16-rmagick-arch-linux/&title=Install Rmagick 3.1 on Archlinux" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=https://greycloak.com/2019/04/16/2019-04-16-rmagick-arch-linux/&title=Install Rmagick 3.1 on Archlinux" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://greycloak.com/2019/04/16/2019-04-16-rmagick-arch-linux/&name=Install Rmagick 3.1 on Archlinux&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://greycloak.com/2019/04/16/2019-04-16-rmagick-arch-linux/&t=Install Rmagick 3.1 on Archlinux" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -227,7 +229,11 @@ ERROR: Can&apos;t install RMagick 3.1.0. Can&apos;t find ImageMagick with pkg-co
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2020 Vince Wadhwani
+    Copyright &copy;
+    
+    
+    2016-2020
+    Vince Wadhwani
   </div>
   <div class="footer-right">
     <nav>
@@ -239,7 +245,7 @@ ERROR: Can&apos;t install RMagick 3.1.0. Can&apos;t find ImageMagick with pkg-co
          
           <li><a href="/archives/">Writing</a></li>
          
-          <li><a href="https://www.econify.com/" target="_blank" rel="noopener">Work</a></li>
+          <li><a href="/projects_url">Projects</a></li>
         
       </ul>
     </nav>
@@ -262,6 +268,31 @@ ERROR: Can&apos;t install RMagick 3.1.0. Can&apos;t find ImageMagick with pkg-co
 
 <script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
 
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
 
 <script src="/js/main.js"></script>
 
@@ -269,35 +300,10 @@ ERROR: Can&apos;t install RMagick 3.1.0. Can&apos;t find ImageMagick with pkg-co
 
 <!-- Google Analytics -->
 
-    <script type="text/javascript">
-        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-122322302-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-
 <!-- Baidu Analytics -->
 
 <!-- Disqus Comments -->
 
 
-    <!-- Default Statcounter code for Hackido http://www.hackido.com -->
-    <script type="text/javascript">
-    var sc_project=4237803;
-    var sc_invisible=1;
-    var sc_security="c7f025ad";
-    </script>
-    <script type="text/javascript"
-    src="https://www.statcounter.com/counter/counter.js"
-    async></script>
-    <noscript><div class="statcounter"><a title="Web Analytics
-    Made Easy - StatCounter" href="https://statcounter.com/"
-    target="_blank"><img class="statcounter"
-    src="https://c.statcounter.com/4237803/0/c7f025ad/1/"
-    alt="Web Analytics Made Easy -
-    StatCounter"></a></div></noscript>
-    <!-- End of Statcounter Code -->
 </body>
 </html>
